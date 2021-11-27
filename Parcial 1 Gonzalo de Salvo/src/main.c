@@ -45,7 +45,7 @@ int main(void)
             if(check==1)
             {
                 printf("Cliente dado de alta con exito!\n");
-                flagAlta=1;
+                flagAlta++;
             }
             else
             {
@@ -54,7 +54,7 @@ int main(void)
             break;
         case 2:
             system("cls");
-            if(flagAlta==1)
+            if(flagAlta>=1)
             {
                 check=modificarCliente(listaClientes, TamCli, listaLocalidades, TamLoc, listaDirecciones, TamDir, &idLocalidad);
                 if(check==1)
@@ -76,13 +76,14 @@ int main(void)
             }
             break;
         case 3:
-            if(flagAlta==1)
+            if(flagAlta>=1)
             {
                 system("cls");
                 check=bajaCliente(listaClientes, TamCli, listaLocalidades, TamLoc, listaDirecciones, TamDir);
                 if(check==1)
                 {
                     printf("El cliente fue dado de baja con exito!\n");
+                    flagAlta--;
                 }
             }
             else
@@ -91,7 +92,7 @@ int main(void)
             }
             break;
         case 4:
-            if(flagAlta==1)
+            if(flagAlta>=1)
             {
                 system("cls");
                 check=agregarPedido(listaPedidos,TamPed,listaClientes,TamCli,listaLocalidades,TamLoc,listaDirecciones,TamDir,&idPedido);
@@ -124,7 +125,7 @@ int main(void)
             }
             break;
         case 6:
-            if(flagAlta==1)
+            if(flagAlta>=1)
             {
                 system("cls");
                 mostrarClientesPedidoPendientes(listaClientes,TamCli,listaPedidos,TamPed,listaLocalidades,TamLoc,listaDirecciones,TamDir);
@@ -184,7 +185,7 @@ int main(void)
             }
             break;
         case 11:
-            if(flagAlta==1)
+            if(flagAlta>=1)
             {
                 system("cls");
                 clienteConMasPedidosEstado(listaClientes,TamCli,listaPedidos,TamPed,0);
@@ -195,7 +196,7 @@ int main(void)
             }
             break;
         case 12:
-            if(flagAlta==1)
+            if(flagAlta>=1)
             {
                 system("cls");
                 clienteConMasPedidosEstado(listaClientes,TamCli,listaPedidos,TamPed,1);
@@ -206,7 +207,7 @@ int main(void)
             }
             break;
         case 13:
-            if(flagAlta==1)
+            if(flagAlta>=1)
             {
                 system("cls");
             direccionPedidosPendientes(listaClientes,TamCli,listaPedidos,TamPed,listaLocalidades,TamLoc,listaDirecciones,TamDir);

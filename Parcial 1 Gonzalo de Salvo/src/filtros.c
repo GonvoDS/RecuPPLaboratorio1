@@ -24,11 +24,12 @@ int localidadPedidosPendientes(eCliente* listaCli,int tamCli,ePedido* listaPed,i
         {
             if(listaCli[i].idLocalidad==todoOk && listaCli[i].isEmpty==0)
             {
-                flag=1;
+
                 for(int j=0; j<tamLoc; j++)
                 {
                     if(listaCli[i].idCliente==listaPed[j].idCliente && listaPed[i].estado==0)
                     {
+                    	flag=1;
                         cantidadPendientes++;
                     }
                 }
@@ -89,7 +90,7 @@ int clienteConMasPedidosEstado(eCliente* listaCli,int tamCli, ePedido* listaPed,
         {
             for(int j=0; j<tamPed; j++)
             {
-                if(listaPed[i].idCliente==listaCli[i].idCliente && listaPed[j].estado==estado)
+                if(listaPed[j].idCliente==listaCli[i].idCliente && listaPed[j].estado==estado)
                 {
                     cantidad++;
                 }
@@ -98,6 +99,7 @@ int clienteConMasPedidosEstado(eCliente* listaCli,int tamCli, ePedido* listaPed,
             {
                 cantMayor=cantidad;
                 idMayor=listaCli[i].idCliente;
+                flag=1;
             }
         }
     }

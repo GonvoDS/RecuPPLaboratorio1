@@ -58,7 +58,7 @@ int altaCliente(eCliente* listaCli,int tam,eLocalidad* listaLoc, int tamLoc, eDi
     {
         indiceCli=buscarLibreCliente(listaCli,tam);
         indiceLoc=buscarLibreLocalidad(listaLoc,tamLoc);
-        if(indiceLoc==-1 && indiceCli ==1)
+        if(indiceLoc==-1 || indiceCli ==-1)
         {
             printf("No hay mas espacio disponible en el sistema.\n");
         }
@@ -240,7 +240,7 @@ int mostrarClientes(eCliente clientes[],int tamCli, eLocalidad* localidades, int
         todoOK = 1;
         if(flag)
         {
-            printf("No hay clientes para mostrar\n");
+            printf("\nNo hay clientes para mostrar\n");
         }
     }
     return todoOK;

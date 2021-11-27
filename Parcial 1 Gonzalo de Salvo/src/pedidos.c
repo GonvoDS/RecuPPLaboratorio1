@@ -154,7 +154,7 @@ int mostrarClientesPedidoPendientes(eCliente clientes[],int tamCli,ePedido pedid
 {
     int todoOk=0;
     char strLocalidad[50];
-    int pendientes=0;
+   int pendientes;
 
     printf("                        ***Listado de clientes***\n\n\n");
     for(int i=0; i<tamCli; i++)
@@ -164,6 +164,7 @@ int mostrarClientesPedidoPendientes(eCliente clientes[],int tamCli,ePedido pedid
             eDireccion auxDireccion=cargarDireccionId(direcciones,tamDir,clientes[i].idCliente);
             cargarDescripcionLocalidad(localidades,tamLoc,clientes[i].idLocalidad,strLocalidad);
             todoOk=1;
+            pendientes=0;
             printf("\nID: %d\n",clientes[i].idCliente);
             printf("Nombre de la empresa: %s\n",clientes[i].nombreEmpresa);
             printf("Cuit: %s\n",clientes[i].cuit);
